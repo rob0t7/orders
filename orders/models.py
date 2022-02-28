@@ -18,3 +18,9 @@ class Product(BaseModel):
     price = models.DecimalField(
         max_digits=10, decimal_places=2, validators=[MinValueValidator(0)]
     )
+
+
+class Customer(BaseModel):
+    email = models.EmailField(unique=True, db_index=True)
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)

@@ -1,15 +1,9 @@
-from re import I
 import pytest
 from rest_framework.test import APIClient
 from orders.models import Product
 
 
 PRODUCT_PATH = "/products/"
-
-
-@pytest.fixture
-def api_client() -> APIClient:
-    return APIClient()
 
 
 def verify_product_response(product_data, expected_product):
